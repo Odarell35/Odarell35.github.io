@@ -24,7 +24,8 @@ class Data_storage:
         HOST = getenv('HOST')
         DATABASE = getenv('DATABASE')
 
-        self.__engine = create_engine(f'mysql+mysqldb://{USER}:{PWD}@{HOST}/{DATABASE}',pool_pre_ping=True)
+        self.__engine = create_engine(f'mysql+mysqldb://{getenv("USER")}:{getenv("PWD")}@{getenv("HOST")}/{getenv("DATABASE")}', pool_pre_ping=True)
+
 
     def data(self, cls=None):
         """returns ojects depending on class
