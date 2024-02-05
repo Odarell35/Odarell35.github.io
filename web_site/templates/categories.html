@@ -16,7 +16,6 @@
     </nav>
 
     <div class="header">
-        <h1>Welcome to the EBOOK CLUB</h1>
         <p>Lets explore through literature!</p>
     </div>
     <div class="Search">
@@ -25,36 +24,9 @@
 		<i class="material-icons">search</i>
 	</button>
     </div>
-    <div class="categories-container">
-        <div class="category-card">
-            <a href="#">Fiction</a>
+    {% for category in categories %}
+        <div class="category-box" style="background-color: {{ category.color }}">
+        <a href="{{ url_for('app_views.home', category_id=category.id) }}">{{ category.category_name }}</a>
         </div>
-        <div class="category-card">
-            <a href="#">Non-Fiction</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Mystery</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Romance</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Science Fiction</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Fantasy</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Self-help</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Biography</a>
-        </div>
-        <div class="category-card">
-            <a href="#">History</a>
-        </div>
-        <div class="category-card">
-            <a href="#">Education</a>
-        </div>
-    </div>
+    {% endfor %}
 {% endblock %}

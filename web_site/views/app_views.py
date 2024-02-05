@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 import json
+from web_site import db, app
 from web_site.models.Books_model import Books
 from web_site.models.Category_model import Category
 from web_site.models.Review_model import Reviews
@@ -19,3 +20,8 @@ def about():
     return "About eBookClub"
 
 
+@app_views.route('/Category', strict_slashes=False)
+def category():
+    categories = Category.query.all()
+    
+    return render_template("categories.html", categories=categories)

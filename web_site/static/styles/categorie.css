@@ -51,23 +51,24 @@ nav a {
     text-decoration: none;
 }
 
-.categories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.category-card {
-    width: calc(33.33% - 20px);
-    height: 80px;
+.category-box {
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-    background: #fff;
-    cursor: pointer;
+    text-align: center;
+}
+
+.category-box:nth-child(odd) {
+    background-color: #8ac6d1;
+}
+
+.category-box:nth-child(even) {
+    background-color: #ffd699;
 }
 
 .Search {
