@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/styles/login.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+           
+            <div>
+                <h3>EBOOK CLUB</h3>
+            </div>
+
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="categories.html">Categories</a>
+                <a href="#">Blog</a>
+              </div>
+
+        </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" action="/login" id=loginform>
+            <input type="email" placeholder="Email" id="email" name="email" required >
+            <input type="password" placeholder="Password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <h5><a href="#">Forgot password?</a></h5>
+            <h6>Dont have a account? <a href="Register.html">Register</a></h6>
+        </form>
+        <script>
+            $(document).ready(function(){
+                $("#loginform").submit(function (event){
+                    event.preventDefault();
+                    var data = {
+                    email:$("#email").val(),
+                    password: $("#password").val()};
+
+                    $.ajax({
+                        type:"POST",
+                        url: "/login",
+                        contentType: "application/json;charset=UTF-8",
+                        data: JSON.stringify(data),
+                        success: function (response) {
+                            if (response.success){
+                                alert("Succefully logged in");
+                                window.location.href = response.redirect;
+                        } else {
+                            alert("Incorrect credentials");
+                            }
+                            },
+                        error: function (error) {
+                            alert("Error: " + JSON.stringify(error));
+                        }
+                        });
+                    });
+                });
+        </script>
+    </div>
+</body>
+</html>
