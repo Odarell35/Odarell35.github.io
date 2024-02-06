@@ -26,7 +26,7 @@
     <div class="category-container">
         {% for category in categories %}
             <div class="category-box" style="background-color: {{ category.color }}">
-            <a href="{{ url_for('app_views.list_books', category_id=category.id) }}">{{ category.category_name }}</a>
+            <a href="{{ url_for('app_views.list_books', books_by_category=books_by_category) }}">{{ category.category_name }}</a>
            </div>
         {% endfor %}
      </div>
