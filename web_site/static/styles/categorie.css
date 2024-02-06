@@ -5,9 +5,17 @@ body{
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    margin-top: 70px; 
 }
 
-.categories-container{
+.heading h3{
+    margin-top: 11%;
+    text-align: center;
+    color: #0c290d;
+    text-transform: capitalize;
+}
+
+.category-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -20,7 +28,7 @@ a{
     color: #333333;
 }
 
-.categories-container a:hover{
+.category-container a:hover{
     color: #3e8e41;
 }
 
@@ -37,21 +45,93 @@ button:active {
 
 
 nav {
-    background-color: #3e8e41;
-    color: white;
-    padding: 10px;
+    background: #4caf50;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.ebook-logo {
+    float: left;
+    width: 150px;
+    height: 70px;
+    padding-left: 10px;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+    
+nav ul li {
+    float: left;
+    display: inline-block;
+    background:  #333;
+}
+    
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   line-height: 70px;
+   font-size:  18px;
+   padding: 8px 15px;
+}
+
+
+nav ul li a:hover {
+    color: #32CD32;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4caf50, 0 0 5px #32CD32;
+}
+    
+nav ul ul li a:hover {
+    colors: #32CD32;
+    box-shadow: none;
+}
+    
+nav ul ul {
+    position: absolute;
+    top: 70px;
+    opacity: 0;
+    transition: .3s;
+}
+    
+nav ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+    
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+    
+nav ul ul li a {
+    line-height: 50px;
+}
+    
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+
+
+.category-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
 }
-
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
 .category-box {
+    flex: 1 0 calc(25% - 20px);
     width: 150px;
     height: 100px;
     margin: 10px;
@@ -61,14 +141,52 @@ nav a {
     align-items: center;
     justify-content: center;
     text-align: center;
+    border-radius: 6px;
+    transition: background-image 0.3s ease;
+    background-size: cover;
+    color: #333;
 }
 
-.category-box:nth-child(odd) {
-    background-color: #8ac6d1;
+.category-box:nth-child(1):hover {
+    background-image: url('https://images.pexels.com/photos/1853354/pexels-photo-1853354.jpeg');
+    color: white;
 }
 
-.category-box:nth-child(even) {
-    background-color: #ffd699;
+.category-box:nth-child(2):hover {
+    background-image: url('https://images.pexels.com/photos/7034646/pexels-photo-7034646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+
+.category-box:nth-child(3):hover {
+    background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+
+.category-box:nth-child(4):hover {
+    background-image: url('https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+
+.category-box:nth-child(5):hover {
+    background-image: url('https://images.pexels.com/photos/762686/pexels-photo-762686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+
+.category-box:nth-child(6):hover {
+    background-image: url('https://images.pexels.com/photos/415078/pexels-photo-415078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+.category-box:nth-child(7):hover {
+    background-image: url('https://images.pexels.com/photos/810050/pexels-photo-810050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+.category-box:nth-child(8):hover {
+    background-image: url('https://images.pexels.com/photos/1809340/pexels-photo-1809340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
+}
+.category-box:nth-child(9):hover {
+    background-image: url('https://images.pexels.com/photos/990432/pexels-photo-990432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color:#000;
 }
 
 .Search {
@@ -104,5 +222,21 @@ nav a {
 
 .Search button:active {
     background-color: #0c290d;
+}
+
+/*footer*/
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100px;
+    
+}
+
+.footer-text{
+    color: #0c290d;
+    text-align: center;
+    margin: 0;
 }
 
