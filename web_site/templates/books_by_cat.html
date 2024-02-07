@@ -18,20 +18,15 @@
             <li><a href="#">Logout</a><li>
         </ul>
     </nav>
-
-    {% for category_name, books in books_by_category.items() %}
-        <h2>{{ category_name }}</h2>
-        <ul>
-            {% for book in books %}
+            <h2>{{ category_name }}</h2>
+            <ul>
                 <li>
                     <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">
                         {{ book.title }} by {{ book.Author }}
                     </a>
                 </li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
-     <footer class="footer">
+            </ul>
+    <footer class="footer">
         <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
     </footer>
 </body>

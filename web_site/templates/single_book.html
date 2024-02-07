@@ -1,4 +1,4 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@ CTYPE html>
         <p>Description: {{ book.Book_description }}</p>
         <p> Where to find the full book: {{book.ref_link}}</p>
         <!-- Back to Books List -->
-        <a href="{{ url_for('app_views.list_books') }}">Back to Books List</a>
+        <a href="{{ url_for('app_views.books') }}">Back to Books List</a>
     </div>
 <footer class="footer">
     <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>

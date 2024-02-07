@@ -13,20 +13,14 @@
 </nav>
 
     <div class="heading">
-        <h3>categorise</h3>
+        <h3>Categories</h3>
     </div>
 
-    <div class="Search">
-        <input placeholder="Search">
-        <button>
-		    <i class="material-icons">search</i>
-	    </button>
-    </div>
 
     <div class="category-container">
-        {% for category in categories %}
-            <div class="category-box" style="background-color: {{ category.color }}">
-            <a href="{{ url_for('app_views.list_books', books_by_category=books_by_category) }}">{{ category.category_name }}</a>
+            {% for category in categories %}
+            <div class="category-box" >
+            <a href="{{ url_for('app_views.list_books', category_name=category.category_name ) }}">{{ category.category_name }}</a>
            </div>
         {% endfor %}
      </div>
