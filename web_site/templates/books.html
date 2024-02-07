@@ -18,15 +18,27 @@
     <div class="header">
         <p>Lets explore through literature!</p>
     </div>
+
     <div class="Search">
         <input placeholder="Search">
         <button>
-        <i class="material-icons">search</i>
-    </button>
+            <i class="material-icons">search</i>
+        </button>
     </div>
+
+    <div class="category-container">
+        {% for book in books %}
+            <div class="book-box">
+                <a href="{{ url_for('app_views.home', book_id=book.id) }}">{{ book.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+<<<<<<< HEAD
+=======
     {% for book in books %}
         <div class="book-box">
         <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">{{ book.title }}</a>
         </div>
     {% endfor %}
+>>>>>>> a08c601ccbf96da3b892c077c9f4f2b13bd03e8b
 {% endblock %}

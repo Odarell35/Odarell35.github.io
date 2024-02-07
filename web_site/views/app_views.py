@@ -24,15 +24,13 @@ def about():
 def category():
     categories = Category.query.all()
     
-    return render_template("categories.html", categories=categories)
+    return render_template("categories.html", categories=categories, title='categories')
 
 @app_views.route('/book_by_category/<category_name>/', strict_slashes=False)
 def list_books(category_name):
     categories = Category.query.filter_by(category_name=category_name).all()
-    print(categories)
 
     book = Books.query.filter_by(Catergory_name=category_name).first()
-    print(book)
 
     return render_template('books_by_cat.html', book=book)
 
