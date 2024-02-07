@@ -25,10 +25,10 @@ def category():
     categories = Category.query.all()
     books = Books.query.all()
     
-    return render_template("categories.html", categories=categories, books=books)
+    return render_template("categories.html", categories=categories, books=books, title='categories')
 
 @app_views.route('/books', strict_slashes=False)
 def list_books():
     books = Books.query.all()
 
-    return render_template("books.html", books=books)
+    return render_template("books.html", books=books, title='books')

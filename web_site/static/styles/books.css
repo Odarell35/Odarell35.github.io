@@ -5,12 +5,13 @@ body{
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    margin-top: 70px; 
 }
 
 .categories-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -52,11 +53,13 @@ nav a {
 }
 
 .book-box {
+    flex: 1 0 calc(25% - 20px);
     width: 150px;
     height: 100px;
     margin: 10px;
     padding: 10px;
     border: 1px solid #000;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,11 +67,11 @@ nav a {
 }
 
 .book-box:nth-child(odd) {
-    background-color: #8ac6d1;
+    background-color: white;
 }
 
 .book-box:nth-child(even) {
-    background-color: #ffd699;
+    background-color: white;
 }
 
 .Search {
