@@ -26,22 +26,14 @@ def category():
     
     return render_template("categories.html", categories=categories, title='categories')
 
-@app_views.route('/books', strict_slashes=False)
-def books():
-    books = Books.query.all()
+@app_views.route('/book_by_category/<category_name>/', strict_slashes=False)
+def list_books(category_name):
+    categories = Category.query.filter_by(category_name=category_name).all()
 
-    return render_template("books.html", books=books, title='books')
+    book = Books.query.filter_by(Catergory_name=category_name).first()
 
-@app_views.route('/book_by_category', strict_slashes=False)
-def list_books():
-    categories = Category.query.all()
-    books_by_category = {}
+    return render_template('books_by_cat.html', book=book)
 
-    for category in categories:
-        books = Books.query.filter_by(Catergory_name=category.category_name).all()
-        books_by_category[category.category_name] = books
-
-    return render_template('books_by_cat.html', books_by_category=books_by_category)
 
 @app_views.route('/single_book/<int:book_id>', strict_slashes=False)
 def single_book(book_id):
@@ -51,3 +43,10 @@ def single_book(book_id):
         return render_template('single_book.html', book=book)
     else:
         return ('NOT FOUND'), 404
+
+@app_views.route('/books', strict_slashes=False)
+def books():
+    books = Books.query.all()
+
+    return render_template("books.html", books=books)
+

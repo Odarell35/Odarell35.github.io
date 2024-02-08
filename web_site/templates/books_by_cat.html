@@ -18,6 +18,7 @@
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
+<<<<<<< HEAD
 
     <div class="book-container">
         {% for category_name, books in books_by_category.items() %}
@@ -39,6 +40,16 @@
         {% endfor %}
     </div>
 
+=======
+            <h2>{{ category_name }}</h2>
+            <ul>
+                <li>
+                    <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">
+                        {{ book.title }} by {{ book.Author }}
+                    </a>
+                </li>
+            </ul>
+>>>>>>> 4206a632711820723825784061f188f204af7644
     <footer class="footer">
         <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
     </footer>
