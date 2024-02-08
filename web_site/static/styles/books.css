@@ -6,6 +6,7 @@ body{
     height: 100vh;
     font-family: Arial, sans-serif;
     margin-top: 70px; 
+    background-color: #000;
 }
 
 .categories-container{
