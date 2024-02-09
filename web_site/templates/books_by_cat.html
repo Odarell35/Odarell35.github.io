@@ -18,30 +18,6 @@
             <li><a href="#">Logout</a></li>
         </ul>
     </nav>
-<<<<<<< HEAD
-
-    <div class="book-container">
-        {% for category_name, books in books_by_category.items() %}
-            <div class="category">
-                <h2>{{ category_name }}</h2>
-                <ul class="books-list">
-                    {% for book in books %}
-                        <li class="book-box">
-                            <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">
-                                <div class="book-info">
-                                    <span class="book-title">{{ book.title }}</span><br>
-                                    <span class="book-author">by {{ book.Author }}</span>
-                                </div>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endfor %}
-    </div>
-
-=======
-            <h2>{{ category_name }}</h2>
             <ul>
                 <li>
                     <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">
@@ -49,7 +25,6 @@
                     </a>
                 </li>
             </ul>
->>>>>>> 4206a632711820723825784061f188f204af7644
     <footer class="footer">
         <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
     </footer>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/single_book.css') }}">
+    <link rel="stylesheet" type="text/css" href="../styles/single_book.css">
     <title>{{ book.title }}</title>
 </head>
 <body>
@@ -24,9 +24,11 @@
         <p>Author: {{ book.Author }}</p>
         <p>Category: {{ book.Catergory_name }}</p>
         <p>Description: {{ book.Book_description }}</p>
-        <p> Where to find the full book: {{book.ref_link}}</p>
+        <p> Where to find the full book: <a href="{{book.ref_link}}">Here</a></p>
         <!-- Back to Books List -->
-        <a href="{{ url_for('app_views.books') }}">Back to Books List</a>
+        <li><a href="{{ url_for('app_views.books') }}">Back to Books List</a></li>
+
+        <a href="{{ url_for('app_views.review', book_id=book.id) }}">Add Review</a>
     </div>
 <footer class="footer">
     <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
