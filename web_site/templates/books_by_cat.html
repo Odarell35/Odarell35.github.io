@@ -19,11 +19,13 @@
         </ul>
     </nav>
             <ul>
+                {% for b in book %}
                 <li>
-                    <a href="{{ url_for('app_views.single_book', book_id=book.id) }}">
-                        {{ book.title }} by {{ book.Author }}
+                    <a href="{{ url_for('app_views.single_book', book_id=b.id) }}">
+                        {{ b.title }} by {{ b.Author }}
                     </a>
                 </li>
+                {% endfor %}
             </ul>
     <footer class="footer">
         <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>

@@ -30,7 +30,7 @@ def category():
 def list_books(category_name):
     categories = Category.query.filter_by(category_name=category_name).all()
 
-    book = Books.query.filter_by(Catergory_name=category_name).first()
+    book = Books.query.filter_by(Catergory_name=category_name).all()
 
     return render_template('books_by_cat.html', book=book)
 
