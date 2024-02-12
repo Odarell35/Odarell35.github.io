@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 import json
 from web_site import db, app
 from web_site.models.Books_model import Books
@@ -12,12 +12,12 @@ app_views = Blueprint('app_views', __name__)
 @app_views.route('/Home', strict_slashes=False)
 def home():
     """home page"""
-    return "eBookClub"
+    return render_template("index.html")
 
 @app_views.route('/About', strict_slashes=False)
 def about():
     """About page"""
-    return "About eBookClub"
+    return render_template("about.html")
 
 
 @app_views.route('/Category', strict_slashes=False)
@@ -30,7 +30,7 @@ def category():
 def list_books(category_name):
     categories = Category.query.filter_by(category_name=category_name).all()
 
-    book = Books.query.filter_by(Catergory_name=category_name).first()
+    book = Books.query.filter_by(Catergory_name=category_name).all()
 
     return render_template('books_by_cat.html', book=book)
 
@@ -40,7 +40,7 @@ def single_book(book_id):
     book = Books.query.get(book_id)
 
     if book:
-        return render_template('single_book.html', book=book)
+        return render_template('single_book.html', book=book, book_id=book.id)
     else:
         return ('NOT FOUND'), 404
 
@@ -50,3 +50,38 @@ def books():
 
     return render_template("books.html", books=books)
 
+@app_views.route('/review/<int:book_id>', methods=['GET', 'POST'], strict_slashes=False)
+def review(book_id):
+    book = Books.query.get(book_id)
+    if request.method == 'POST':
+        data = request.get_json()
+        review_text = data.get('review_text')
+        rating = int(data.get('rating'))
+        
+        if book:
+            new_review = Reviews(
+                Book_id=book.id,
+                Bookname=book.title,
+                user_id=current_user.id,
+                username=current_user.name,
+                Review_text=review_text,
+                rating=rating
+            )
+
+            db.session.add(new_review)
+            db.session.commit()
+
+            db.session.close()
+            flash('Review posted successfully!', category='success')
+            return jsonify({"success": True, "redirect": url_for('app_views.post_review')})
+        else:
+            flash("No book found")
+
+    return render_template('review.html', book=book)
+
+@app_views.route('/post_review',  strict_slashes=False)
+@login_required
+def post_review():
+    list_reviews = Reviews.query.all()
+
+    return render_template("all_reviews.html", list_reviews=list_reviews)
