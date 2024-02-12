@@ -9,6 +9,16 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
+    <nav  id="navbar">
+        <img src="../images/Ebooklogo.png" alt="" class="ebook-logo">
+            <ul>
+                <li><a href="#">Home</a><li>
+                <li><a href="#">About</a><li>
+                <li><a href="#">idea</a><li>
+                <li><a href="#">My Account</a><li>
+                <li><a href="#">Logout</a><li>
+            </ul>
+    </nav>
     <div class="registration-form">
         <form id="signupForm" action="/sign-up" method="POST">
             <h2>Registration</h2>
@@ -19,37 +29,9 @@
             <button type=submit>Register</button>
             <p>Already have an account? <a href="login.html">LogIn</a></p>
         </form>
-        <script>
-            $(document).ready(function () {
-                $("#signupForm").submit(function (event) {
-                    event.preventDefault();
-
-                    var formData = {
-                        name: $("#name").val(),
-                        surname: $("#surname").val(),
-                        email: $("#email").val(),
-                        password: $("#password").val()
-                    };
-                    $.ajax({
-                        type: "POST",
-                        url: "/sign-up",
-                        contentType: "application/json;charset=UTF-8",
-                        data: JSON.stringify(formData),
-                        success: function (response) {
-                              if (response.success){
-                                  alert("Succefully signed up");
-                                  window.location.href = response.redirect;
-                          } else {
-                              alert("Incorrect credentials");
-                              }
-                              },
-                        error: function (error) {
-                        alert("Error: " + JSON.stringify(error));
-                        }
-                    });
-                });
-            });
-        </script>
     </div>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
+    </footer>
 </body>
 </html>

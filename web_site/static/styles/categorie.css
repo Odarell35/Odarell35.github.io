@@ -23,14 +23,14 @@ body{
 }
 
 
-/*a{
+a{
     text-decoration: none;
     color: #333333;
-}*/
+}
 
-/*.category-container a:hover{
+.category-container a:hover{
     color: #3e8e41;
-}*/
+}
 
 .lists{
     display: flex;

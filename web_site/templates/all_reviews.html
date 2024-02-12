@@ -6,27 +6,24 @@
         <ul>
             <li><a href="#">Home</a><li>
             <li><a href="#">About</a><li>
-            <li><a href="#">Review</a><li>
+            <li><a href="#">idea</a><li>
             <li><a href="#">My Account</a><li>
             <li><a href="#">Logout</a><li>
         </ul>
 </nav>
-
-    <div class="heading">
-        <h3>Categories</h3>
+     <div class="reviews-list">
+        <h2>Reviews</h2>
+        {% for review in list_reviews %}
+            <div class="review-item">
+               <p>Title of the book in review: {{ review.Bookname }}</p>
+               <p>{{ review.username }} says:</p>
+               <p>{{ review.Review_text }}</p>
+               <p>Rating: {{ review.rating }}/10</p>
+            </div>
+         {% endfor %}
     </div>
-
-
-    <div class="category-container">
-            {% for category in categories %}
-            <div class="category-box" >
-            <a href="{{ url_for('app_views.list_books', category_name=category.category_name ) }}">{{ category.category_name }}</a>
-           </div>
-        {% endfor %}
-     </div>
 
     <footer class="footer">
         <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
     </footer>
-
 {% endblock %}

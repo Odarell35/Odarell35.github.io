@@ -4,8 +4,12 @@ if __name__ == "__main__":
     conn = sqlite3.connect('instance/eBook_db.db')
     cur = conn.cursor()
 
-    cur.execute("INSERT INTO books (title, Author, Catergory_name, Book_description, ref_link) VALUES('The  Bee  sting','Paul  Murray','Fiction','The  Barnes  family  faces  a  crisis  as  Dickie`s  profitable  car  business  collapses,  yet  he`s  preoccupied  building  an  apocalypse-proof  bunker  with  a  rebellious  handyman.  Imelda,  his  wife,  resorts  to  selling  jewelry  online  and  navigating  advances  from  cattle  farmer  Big  Mike.  Meanwhile,  their  once  high-achieving  daughter  Cass  is  prioritizing  binge  drinking  over  exams.  Twelve-year-old  PJ  contemplates  running  away,  highlighting  the  family`s  unraveling  dynamics  amid  financial  woes  and  personal  struggles.', 'https://play.google.com/store/books/details/Paul_Murray_The_Bee_Sting?id=QJmDEAAAQBAJ')")
-    conn.commit()
-    cur.close()
-    conn.close()
+    cur.execute("INSERT INTO books (title, Author, Catergory_name, Book_description, ref_link) VALUES(' Rise of the TMNT: Sound Off!',\
+'Matthew K. Manning',\
+'Animation',\
+'In this ebook, the Teenage Mutant Ninja Turtles (TMNT) face new adversaries, challenging their cunning and skills. However, the key to victory lies in April finding her voice before it is too late. The story explores the turtles strategies and abilities as they confront these new threats.',\
+'https://play.google.com/store/books/details/Matthew_K_Manning_TMNT_Rise_of_the_TMNT_Sound_Off?id=-GurDwAAQBAJ')")
+conn.commit()
+cur.close()
+conn.close()
 
