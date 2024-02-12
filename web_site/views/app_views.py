@@ -12,12 +12,12 @@ app_views = Blueprint('app_views', __name__)
 @app_views.route('/Home', strict_slashes=False)
 def home():
     """home page"""
-    return "eBookClub"
+    return render_template("index.html")
 
 @app_views.route('/About', strict_slashes=False)
 def about():
     """About page"""
-    return "About eBookClub"
+    return render_template("about.html")
 
 
 @app_views.route('/Category', strict_slashes=False)
