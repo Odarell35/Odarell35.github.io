@@ -14,7 +14,7 @@ app_views = Blueprint('app_views', __name__)
 def home():
     """home page"""
     #return jsonify({"success": True, "redirect": url_for('app_views.my_account')})
-    return render_template("index.html")
+    return render_template("index.html", slide1=url_for('static', filename='styles/images/Elon Musk.jpeg'))
 
 @app_views.route('/About', strict_slashes=False)
 def about():
