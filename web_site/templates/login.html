@@ -30,7 +30,7 @@
             <input type="password" placeholder="Password" id="password" name="password" required>
             <button type="submit">Login</button>
             <h5><a href="#">Forgot password?</a></h5>
-            <h6>Dont have a account? <a href="Register.html">Register</a></h6>
+            <h6>Dont have a account? <a href="/sign-up">Register</a></h6>
         </form>
         <script>
             $(document).ready(function(){
@@ -47,7 +47,6 @@
                         data: JSON.stringify(data),
                         success: function (response) {
                             if (response.success){
-                                alert("Succefully logged in");
                                 window.location.href = response.redirect;
                         } else {
                             alert("Incorrect credentials");
