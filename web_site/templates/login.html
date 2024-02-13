@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/styles/login.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <title>Login</title>
-</head>
-<body>
+ {% extends "layout.html" %}
+ {% block body %}
     <nav>
-           
-            <div>
-                <h3>EBOOK CLUB</h3>
-            </div>
+        <img src="eBookClub/images/Ebooklogo.png" class="logo ebook-logo">
+            <ul>
+                <li><a href="#">Home</a><li>
+                <li><a href="#">About</a><li>
+                <li><a href="#">Review</a><li>
+                <li><a href="#">My Account</a><li>
+                <li><a href="#">Logout</a><li>
+            </ul>
+    </nav>
 
-            <div>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="categories.html">Categories</a>
-                <a href="#">Blog</a>
-              </div>
-
-        </nav>
     <div class="login-container">
         <h2>Login</h2>
         <form method="POST" action="/login" id=loginform>
@@ -32,6 +20,7 @@
             <h5><a href="#">Forgot password?</a></h5>
             <h6>Dont have a account? <a href="Register.html">Register</a></h6>
         </form>
+
         <script>
             $(document).ready(function(){
                 $("#loginform").submit(function (event){
@@ -61,5 +50,8 @@
                 });
         </script>
     </div>
-</body>
-</html>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
+    </footer>
+{% endblock %}

@@ -1,66 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
-        <link rel="stylesheet" type="text/css" href="../static/styles/styles.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        <title>Home Page</title>
-</head>
-<body>
-<nav>
-<img src="Ebooklogo.webp" class="logo ebook-logo">
-<input type="checkbox" id="check">
-<label for="check" class="checkbtn">
-<i class="fa-solid fa-bars"></i>
-</label>
+{% extends "layout.html" %}
+{% block body%}
 
-<label class="logo"></label>
-<ul>
-            <li><a class="active" href='app_views.home'>Home</a></li>
-            <li><a class="active" href="/Category">Categories</a></li>
-            <li><a href="#">Idea</a></li>
-            <li><a href="#">Idea</a></li>
-            <li><a class="active" href="app_views.about">About</a></li>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Log out</a></li>
-</ul>
-</nav>
+    <nav>
+        <img src="eBookClub/images/Ebooklogo.png" class="logo ebook-logo">
+            <ul>
+                <li><a href="#">Home</a><li>
+                <li><a href="#">About</a><li>
+                <li><a href="#">Review</a><li>
+                <li><a href="#">My Account</a><li>
+                <li><a href="#">Logout</a><li>
+            </ul>
+    </nav>
 
 <div class="flex-container">
-
-<div class="flex-item">BOOK 1</div>  
-<div class="flex-item">BOOK item 2</div>  
-<div class="flex-item">BOOK item 3</div>
-<div class="flex-item">BOOK item 4</div>
+    
 </div>
 
 <div class="text-wrapper">
-<h1>Welcome to our eBook Club</h1>
-<p>Let's explore through literature!</p>
+    <h1>Welcome to our eBook Club</h1>
+    <p>Let's explore through literature!</p>
 </div>
-</body>
-</html>
-{% extends "layout.html" %}
 
-{% block body %}
-<nav>
-    <img src="eBookClub/images/Ebooklogo.png" class="logo ebook-logo">
-        <ul>
-            <li><a href="#">Home</a><li>
-            <li><a href="#">About</a><li>
-            <li><a href="#">Review</a><li>
-            <li><a href="#">My Account</a><li>
-            <li><a href="#">Logout</a><li>
-        </ul>
-</nav>
-
-<div class="paragraph">
-    <h3>Welcome to the eBookClub.</h3>
-    <h5>lets exploer through literature!!</h5>
-</div>
 <footer class="footer">
     <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
 </footer>
