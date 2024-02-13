@@ -240,3 +240,20 @@ nav ul ul ul li {
     margin: 0;
 }
 
+.profile_photo {
+    border-radius: 45px;
+    height: 45px;
+    width: 56px;
+    border: solid 5px blue;
+
+}
+
+.user_information {
+    align-items: right;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0px 25px 0px;
+}
+
+    
+}

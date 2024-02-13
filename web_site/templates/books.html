@@ -1,19 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <nav>
-            
-        <div>
-            <h3>EBOOK CLUB</h3>
-        </div>
-
-        <div>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-          </div>
-                
-    </nav>
+<nav  id="navbar">
+    <img src="../images/Ebooklogo.png" alt="" class="ebook-logo">
+        <ul>
+            <li><a href="#">Home</a><li>
+            <li><a href="#">About</a><li>
+            <li><a href="#">idea</a><li>
+            <li><a href="#">My Account</a><li>
+            <li><a href="#">Logout</a><li>
+        </ul>
+</nav>
 
     <div class="header">
         <p>Lets explore through literature!</p>
@@ -33,4 +30,27 @@
             </div>
         {% endfor %}
     </div>
+
+    <script>
+        // Get the navigation element
+        const nav = document.getElementById('navbar');
+
+        // Function to handle scroll event
+        function handleScroll() {
+            // Add 'hidden' class to nav when scrolling down, remove it when scrolling up
+            if (window.scrollY > this.lastScroll) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+            this.lastScroll = window.scrollY;
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 EBOOKCLUB. All rights reserved.</p>
+    </footer>
 {% endblock %}

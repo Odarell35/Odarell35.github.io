@@ -6,7 +6,7 @@ body{
     height: 100vh;
     font-family: Arial, sans-serif;
     margin-top: 70px; 
-    background-color: #000;
+  
 }
 
 .categories-container{
@@ -39,18 +39,72 @@ button:active {
 
 
 nav {
-    background-color: #3e8e41;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: #4caf50;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;     
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4caf50, 0 0 5px #32CD32;     
+    box-shadow: none;
+    transition: transform 0.3s ease;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+
+.ebook-logo {
+    float: left;
+    width: 150px;
+    height: 70px;
+    padding-left: 10px;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+    
+nav ul li {
+    float: left;
+    display: inline-block;
+    background:  #333;
+}
+    
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   line-height: 70px;
+   font-size:  18px;
+   padding: 8px 15px;
+}    
+
+    
+nav ul ul {
+    position: absolute;
+    top: 70px;
+    opacity: 0;
+    transition: .3s;
+}
+      
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+    
+nav ul ul li a {
+    line-height: 50px;
+}
+    
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
 }
 
 .book-box {
@@ -108,4 +162,19 @@ nav a {
 
 .Search button:active {
     background-color: #0c290d;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 15px;
+    
+}
+
+.footer-text{
+    color: #0c290d;
+    text-align: center;
+    margin: 0;
 }

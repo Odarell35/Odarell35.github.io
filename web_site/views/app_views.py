@@ -10,8 +10,10 @@ from flask_login import login_required, current_user
 app_views = Blueprint('app_views', __name__)
 
 @app_views.route('/Home', strict_slashes=False)
+@login_required
 def home():
     """home page"""
+    #return jsonify({"success": True, "redirect": url_for('app_views.my_account')})
     return render_template("index.html")
 
 @app_views.route('/About', strict_slashes=False)
@@ -86,3 +88,9 @@ def post_review():
 
     return render_template("all_reviews.html", list_reviews=list_reviews)
 
+@app_views.route('/My_account',  strict_slashes=False)
+@login_required
+def my_account():
+    user = User.query.get(current_user.id)
+
+    return render_template("my_account.html", user=user)
