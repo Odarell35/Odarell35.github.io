@@ -14,15 +14,18 @@
     <div class="heading">
         <h3>My Account</h3>
     </div>
-    <img src="{{ profile }}" class="profile_photo"alt="NO PICTURE">
+    <img src="{{ url_for('static', filename='styles/images/profile.jpg') }}" class="profile_photo"alt="NO PICTURE">
     <div class="user-information">
         <p>name: {{ user.name }}</p>
         <p>surname: {{ user.surname }}</p>
         <p>email: {{user.email }}</p>
     </div>
-    <div class="books_read">
-        <ul>
-        </ul>
+    <div class="books_review">
+        {% for rev in q %}
+            <p>Book: {{ rev.Bookname }}</p>
+            <p>Review: {{ rev.Review_text }}</p>
+            <p>Rating: {{ rev.rating }}</p>
+        {% endfor %}
     </div>
 
     <footer class="footer">

@@ -92,5 +92,6 @@ def post_review():
 @login_required
 def my_account():
     user = User.query.get(current_user.id)
-
-    return render_template("my_account.html", user=user, profile=url_for('static', filename='styles/images/profile.jpg'))
+    user_id = user.id
+    q = Reviews.query.filter_by(user_id=current_user.id).all()
+    return render_template("my_account.html", user=user, q=q )

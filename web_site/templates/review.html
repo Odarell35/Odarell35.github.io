@@ -12,11 +12,10 @@
     <nav>
         <img src="eBookClub/images/Ebooklogo.png" class="logo ebook-logo">
         <ul>
-            <li><a href="#">Home</a><li>
-            <li><a href="#">About</a><li>
-            <li><a href="#">idea</a><li>
-            <li><a href="#">My Account</a><li>
-            <li><a href="#">Logout</a><li>
+            <li><a href="/Home">Home</a><li>
+            <li><a href="/About">About</a><li>
+            <li><a href="/My_account">My Account</a><li>
+            <li><a href="/Login">Logout</a><li>
         </ul>
     </nav>
 
@@ -49,7 +48,6 @@
                         data: JSON.stringify(review_data),
                         success: function (response) {
                             if (response.success){
-                                alert("Review submitted");
                                 window.location.href =response.redirect;
                           } else {
                                 alert("Incorrect");
